@@ -26,7 +26,11 @@ export default {
     .then(resolt => resolt.json())
     .then(countries => this.countries = countries)
 
-    eventBus.$on('country-selected', (country) => {
+    // eventBus.$on('country-selected', (country) => {
+    //   this.selectedCountry = country;
+    // })
+
+    eventBus.$on('dropdown-country-selected', (country) => {
       this.selectedCountry = country;
     })
   },
