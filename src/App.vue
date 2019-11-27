@@ -2,8 +2,17 @@
   <div>
     <h1>Country Selector</h1>
     <div class='main-container'>
+      <input type="text" v-model="search">
       <countries-list :countries='countries'></countries-list>
       <country-detail :country='selectedCountry'></country-detail>
+      <country-detail v-for="country in filteredList" :country='country'></country-detail>
+<!--
+      <div>
+        <h1 v-for="country in filteredList">{{country.name}}
+        <img :src="country.flag" alt="" style="max-widt:300px">
+      </h1> -->
+
+      </div>
     </div>
   </div>
 </template>
@@ -18,7 +27,15 @@ export default {
   data(){
     return {
       countries: [],
+      search: "",
       selectedCountry: null
+    }
+  },
+  computed:{
+    filteredList() {
+      return this.countries.filter(country => {
+        return country.name.toLowerCase().includes(this.search.toLowerCase())
+      })
     }
   },
   mounted(){
