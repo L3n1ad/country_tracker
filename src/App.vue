@@ -44,6 +44,7 @@ export default {
 <style lang="css" scoped>
   .main-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
   }
 </style>
