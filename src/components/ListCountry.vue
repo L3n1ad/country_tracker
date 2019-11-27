@@ -12,7 +12,7 @@ export default {
   props: ['country'],
   methods: {
     handleClick(){
-      eventBust.$emit('country-selected', this.country)
+      eventBus.$emit('country-selected', this.country)
     }
   }
 }
