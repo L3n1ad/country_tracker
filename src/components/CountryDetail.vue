@@ -9,6 +9,7 @@
         {{language['name']}}
       </li>
     </p>
+    <img :src="country.flag" style="max-width: 300px">
   </div>
 </template>
 
